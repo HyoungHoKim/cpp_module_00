@@ -1,7 +1,7 @@
 CPP = clang++
 CPPFLAGS = -Wall -Werror -Wextra -std=c++98 
 
-SRCS = phone_book.cpp
+SRCS = phone_book.cpp main.cpp ph_utils.cpp
 OBJS = $(SRCS:.cpp=.o)
 NAME = phone_book
 
@@ -18,4 +18,7 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
+test: $(NAME)
+	./$(NAME)
+
+.PHONY: all clean fclean re test
